@@ -1,0 +1,36 @@
+[project]
+name = "patient-ai-assistant"
+version = "0.1.0"
+description = "Multi-agent hospital assistant (diploma MVP)"
+requires-python = ">=3.11"
+
+dependencies = [
+  "langgraph>=0.2.0",
+  "langchain>=0.3.0",
+  "langchain-google-genai>=2.0.0",
+  "langchain-community>=0.3.0",
+  "google-generativeai>=0.8.0",
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.32.0",
+  "pydantic>=2.9.0",
+  "pydantic-settings>=2.6.0",
+  "chromadb>=0.5.0",
+  "python-dotenv>=1.0.1",
+  "tenacity>=9.0.0",
+  "rich>=13.9.0",          # pretty console output
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+  "pytest-asyncio>=0.24.0",
+  "httpx>=0.27.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
